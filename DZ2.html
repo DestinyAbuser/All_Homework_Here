@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <script>
+        let countries = {
+    USA: -5,
+    Brazilia: 23,
+    Belarus: -12,
+    China: 3,
+    Switzerland: 6,
+    Russia: -20,
+    Canada: 10,
+    Germany: 13,
+    Spain: 22
+
+}
+let amount = 0;
+for (let key in countries){
+    if ( countries[key] <= 0)
+        console.log("Температура по странам: \n" + key + " " + countries[key]);
+      else 
+            console.log("Температура по странам: \n" + key + " +" + countries[key]);
+    if (key in countries){
+        amount = amount + 1;
+    }
+}
+let sum = 0;
+let sr = 0;
+for ( let key in countries){
+    sum += countries[key];
+    sr = sum / amount;
+    sr = Math.round(sr)
+}
+if ( sr <= 0)
+    document.write("Примерная средняя температура стран ~" + sr,'<br>');//( '~'- это типо знака примерно )
+  else
+        document.write("Примерная средняя температура стран ~ +  " + sr ,'<br>');
+function maximum(term){
+    var max = -100000;
+    for (let key in term){
+        if ( term[key] > max) 
+           max = term[key];
+    }
+    if(max <= 0)
+    document.write("Максимальная температура = " + max);
+      else
+    document.write("Максимальная температура = +" + max);
+}
+maximum(countries);
+    </script>
+
+
+</body>
+</html>   
